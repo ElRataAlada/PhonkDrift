@@ -22,3 +22,72 @@
     display: flex;
     justify-content: space-between;
 }
+
+.level {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    position: absolute;
+
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    gap: 10px;
+
+
+    font-size: 30px;
+}
+
+progress {
+    width: 80%;
+    height: 10px;
+
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    appearance: none;
+
+    &::-webkit-progress-bar {
+        background-color: #f4f4f4;
+        border-radius: 20px;
+    }
+
+    &::-webkit-progress-value {
+        background-color: #2167a1;
+        border-radius: 20px;
+        transition: all 0.2s ease;
+
+    }
+
+    border-radius: 100px;
+}
+
+.invite {
+    position: absolute;
+    font-size: 20px;
+
+    gap: 5px;
+    width: fit-content;
+
+    height: 40px;
+
+    bottom: 20px;
+    left: 20px;
+
+    height: 40px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 10px;
+
+    img {
+        filter: brightness(0) invert(1);
+        height: 25px;
+    }
+}

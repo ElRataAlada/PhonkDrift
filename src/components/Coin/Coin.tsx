@@ -25,6 +25,22 @@ function get_image(CarType: CoinCarTypes): string {
         case CoinCarTypes.GOLF:
             return default_path + 'golf.png';
 
+        case CoinCarTypes.LANOS:
+            return default_path + 'lanos.png';
+
+        case CoinCarTypes.MATIZ:
+            return default_path + 'matiz.png';
+
+        case CoinCarTypes.CAYENNE:
+            return default_path + 'cayenne.png';
+
+        case CoinCarTypes.POLO:
+            return default_path + 'polo.png';
+
+        case CoinCarTypes.AVENTADOR:
+            return default_path + 'aventador.png';
+
+
         default:
             return default_path + 'passat.png';
     }
