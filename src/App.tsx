@@ -30,7 +30,7 @@ function App() {
 
         return () => clearInterval(interval);
 
-    }, [pointsPerClick]);
+    }, [pointsPerClick, maxEnergy]);
 
     return (
         <>
