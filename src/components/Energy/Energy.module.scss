@@ -1,0 +1,19 @@
+.energy {
+    position: absolute;
+
+    font-size: 20px;
+
+    bottom: 20px;
+    right: 20px;
+    gap: 5px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 40px;
+
+    img {
+        height: 25px;
+    }
+}
