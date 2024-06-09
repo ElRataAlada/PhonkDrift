@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { CoinCarTypes } from '../types/CoinCarTypes';
 import styles from './Coin.module.scss';
 
