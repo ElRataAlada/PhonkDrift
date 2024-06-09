@@ -71,7 +71,7 @@ function App() {
 
     window.addEventListener("beforeunload", (e) => {
         e.preventDefault();
-        // writeLocalStorage();
+        writeLocalStorage();
     });
 
 
