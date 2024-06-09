@@ -7,13 +7,14 @@
     width: 300px;
     aspect-ratio: 1;
 
-    max-width: max(200px, 80%);
-    max-height: 200px;
+    max-width: max(200px, 70%);
+
 
     aspect-ratio: 1;
     user-select: none;
 
     // transition: all 0.05s ease-in-out;
+    transition: none;
 
     bottom: 80px;
     left: 50%;
