@@ -1,10 +1,13 @@
-import React, { useState } from 'react';
-import { CoinCarTypes } from '../types/CoinCarTypes';
+import React, { useEffect, useState } from 'react';
+import { CoinCarTypes } from '../../types/CoinCarTypes';
 import styles from './Coin.module.scss';
 
 interface Props {
     CarType: CoinCarTypes;
     pointsPerClick: number;
+
+    totalPoints: number;
+    setTotalPoints: React.Dispatch<React.SetStateAction<number>>;
 }
 
 
@@ -35,7 +38,7 @@ function randomIntFromInterval(min: number, max: number): number {
 }
 
 
-export default function Coin({ CarType, pointsPerClick }: Props) {
+export default function Coin({ CarType, pointsPerClick, totalPoints, setTotalPoints }: Props) {
     const [points, setPoints] = useState<Point[]>([]);
 
     const image = get_image(CarType);
@@ -49,6 +52,7 @@ export default function Coin({ CarType, pointsPerClick }: Props) {
         const x = e.clientX - elX + randomIntFromInterval(-20, 20);
         const y = e.clientY - elY + randomIntFromInterval(-20, 20);
 
+        setTotalPoints(prev => prev + pointsPerClick);
 
         const newPoint = {
             x,
@@ -58,6 +62,10 @@ export default function Coin({ CarType, pointsPerClick }: Props) {
 
         setPoints([...points, newPoint]);
     }
+
+    useEffect(() => {
+        localStorage.setItem('totalPoints', totalPoints.toString());
+    }, [totalPoints]);
 
     // useEffect(() => {
     //     const timer = setTimeout(() => {
