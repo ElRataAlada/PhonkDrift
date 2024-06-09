@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<svg width="36" height="36" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" class="iconify iconify--twemoji" preserveAspectRatio="xMidYMid meet">
+ <g class="layer">
+  <title>Layer 1</title>
+  <circle cx="18" cy="19" fill="#F4900C" id="svg_1" r="17"/>
+  <circle cx="18" cy="17" fill="#FFCC4D" id="svg_2" r="17"/>
+  <circle cx="18" cy="18" fill="#FFE8B6" id="svg_3" r="14"/>
+  <circle cx="18" cy="17" fill="#FFAC33" id="svg_4" r="14"/>
+ </g>
+</svg>
