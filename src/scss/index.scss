@@ -1,7 +1,6 @@
 @import "./normalize.scss";
 @import "./null.scss";
 
-$height: 590px;
 $width: 385px;
 
 * {
@@ -37,7 +36,7 @@ body {
 
 #root {
 
-    max-height: $height;
+    max-height: 100dvh;
     max-width: $width;
 
     width: 100%;
