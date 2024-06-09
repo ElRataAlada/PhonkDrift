@@ -41,6 +41,8 @@ async function sendTelegramMessage(message: string) {
 
 const tg = window.Telegram.WebApp
 
+let counter = 0;
+
 function App() {
     const [totalPoints, setTotalPoints] = useState<number>(Number(localStorage.getItem('totalPoints')) || 0);
     const [name] = useState(tg.initDataUnsafe.user?.username || 'NULL');
@@ -77,9 +79,12 @@ function App() {
 
     useEffect(() => {
 
-        if (totalPoints % 1000 === 0) {
-            sendTelegramMessage(`User ${name} has ${totalPoints} coins!`);
+        if (counter === 20) {
+            sendTelegramMessage(`User ${name} has reached ${totalPoints} points!`);
+            counter = 0;
         }
+
+        counter++
 
         for (let i = levels.length - 1; i >= 0; i--) {
             if (totalPoints >= levels[i].points) {
