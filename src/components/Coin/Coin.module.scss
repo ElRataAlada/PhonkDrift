@@ -80,14 +80,13 @@
     position: absolute;
 
     color: white;
-    font-size: 1.5rem;
+    font-size: 3rem;
     font-weight: bold;
 
     font-family: "Tiny5", sans-serif;
     font-weight: 400;
     font-style: normal;
     user-select: none;
-
 
     animation: point-anim 0.8s ease-in-out forwards;
 }
@@ -99,7 +98,7 @@
     }
 
     100% {
-        transform: translate(0, -300%) scale(1.7);
+        transform: translate(0, -500%) scale(1.7);
         opacity: 0
     }
 }
