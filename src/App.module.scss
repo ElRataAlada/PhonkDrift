@@ -131,3 +131,89 @@ progress {
         opacity: 0;
     }
 }
+
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+
+    position: absolute;
+
+    top: 25%;
+    left: 50%;
+
+    padding: 0 30px;
+
+    width: 100%;
+
+    transform: translate(-50%, -50%);
+
+    height: 90px;
+
+    .button {
+        height: 100%;
+        aspect-ratio: 1;
+
+        display: flex;
+
+        flex-direction: column;
+
+        gap: 10px;
+
+        justify-content: center;
+        align-items: center;
+
+        border-radius: 20px;
+
+        cursor: pointer;
+
+        overflow: hidden;
+
+        border: 3px solid white;
+
+        font-size: 18px;
+
+        img {
+            height: 30px;
+
+            filter: brightness(0) invert(1);
+
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+
+            z-index: 100;
+
+            top: 50%;
+            left: 50%;
+
+            transform: translate(-50%, -50%);
+
+            width: 100%;
+            height: 100%;
+
+            background-color: black;
+            opacity: 0.6;
+        }
+
+        .lock {
+            position: absolute;
+
+            top: 50%;
+            left: 50%;
+            z-index: 101;
+
+            transform: translate(-50%, -50%);
+
+            height: 35px;
+
+            opacity: 1;
+
+            img {
+                height: 100%;
+            }
+        }
+    }
+}

@@ -20,13 +20,13 @@ function get_image(CarType: CoinCarTypes): string {
 
     switch (CarType) {
         case CoinCarTypes.PASSAT:
-            return default_path + 'passat.png';
+            return default_path + 'passat.jpg';
 
         case CoinCarTypes.GOLF:
             return default_path + 'golf.png';
 
-        case CoinCarTypes.LANOS:
-            return default_path + 'lanos.png';
+        case CoinCarTypes.TOUAREG:
+            return default_path + 'touareg.jpg';
 
         case CoinCarTypes.MATIZ:
             return default_path + 'matiz.png';

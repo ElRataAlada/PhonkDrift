@@ -46,18 +46,17 @@
 
 .car {
     z-index: 2;
-    width: 75%;
+    width: 78%;
 
     position: absolute;
     top: 50%;
     left: 50%;
 
-    transform: translate(-50%, -60%);
+    transform: translate(-50%, -53%);
 
     border-radius: 50%;
     user-select: none;
     user-select: none;
-
 
     object-fit: contain;
 }

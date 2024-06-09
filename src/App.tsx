@@ -8,7 +8,7 @@ import { CoinCarTypes } from './types/CoinCarTypes';
 
 const levels = JSON.parse(localStorage.getItem('levels') || JSON.stringify([
     { level: 1, points: 0, perClick: 5, energy: 5000, car: CoinCarTypes.PASSAT },
-    { level: 2, points: 10000, perClick: 5, energy: 20000, car: CoinCarTypes.LANOS },
+    { level: 2, points: 10000, perClick: 5, energy: 20000, car: CoinCarTypes.TOUAREG },
     { level: 3, points: 50000, perClick: 20, energy: 30000, car: CoinCarTypes.MATIZ },
     { level: 4, points: 200000, perClick: 40, energy: 50000, car: CoinCarTypes.GOLF },
     { level: 5, points: 500000, perClick: 80, energy: 100000, car: CoinCarTypes.CAYENNE },
@@ -71,7 +71,7 @@ function App() {
 
     window.addEventListener("beforeunload", (e) => {
         e.preventDefault();
-        writeLocalStorage();
+        // writeLocalStorage();
     });
 
 
@@ -125,6 +125,26 @@ function App() {
             </div>}
 
             <Energy energy={energy} pointsPerClick={pointsPerClick} setEnergy={setEnergy} />
+
+            <div className={styles.buttons}>
+                <div className={styles.button}>
+                    <img src="images/coins.svg" alt="staking" />
+                    <span>Staking</span>
+                    <img className={styles.lock} src="images/lock.svg" alt="lock" />
+                </div>
+
+                <div className={styles.button}>
+                    <img src="images/airdrop.svg" alt="airdrop" />
+                    <span>Airdrop</span>
+                    <img className={styles.lock} src="images/lock.svg" alt="lock" />
+                </div>
+
+                <div className={styles.button}>
+                    <img src="images/cup.svg" alt="cup" />
+                    <span>Top</span>
+                    <img className={styles.lock} src="images/lock.svg" alt="lock" />
+                </div>
+            </div>
         </>
     )
 }

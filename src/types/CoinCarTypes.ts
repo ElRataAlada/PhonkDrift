@@ -4,7 +4,7 @@ export enum CoinCarTypes {
     POLO = 'POLO',
     LANOS = 'LANOS',
     MATIZ = 'MATIZ',
-    MLE = 'MLE',
+    TOUAREG = 'TOUAREG',
     CAYENNE = 'CAYENNE',
     PANAMERA = 'PANAMERA',
     AVENTADOR = 'AVENTADOR',
