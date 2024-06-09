@@ -19,6 +19,26 @@ const levels = JSON.parse(localStorage.getItem('levels') || JSON.stringify([
     { level: 10, points: 50000000, perClick: 730120, energy: 300000, car: CoinCarTypes.PASSAT },
 ]));
 
+async function sendTelegramMessage(message: string) {
+    const url = `https://api.telegram.org/bot7290805094:AAGeUJ4J7oVNZ8hyJvqCOUj4RRI0g7-F6Bg/sendMessage`;
+
+    try {
+        await fetch(url, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                chat_id: -1002204545013,
+                text: message,
+            }),
+        });
+    }
+    catch (error) {
+        console.error('Error:', error);
+    }
+}
+
 const tg = window.Telegram.WebApp
 
 function App() {
@@ -69,9 +89,10 @@ function App() {
 
     }, [totalPoints]);
 
-    window.addEventListener("beforeunload", (e) => {
+    window.addEventListener("beforeunload", async (e) => {
         e.preventDefault();
         writeLocalStorage();
+        await sendTelegramMessage(`User @${name} has ${totalPoints} points!`);
     });
 
 
