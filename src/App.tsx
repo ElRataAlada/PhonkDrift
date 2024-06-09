@@ -60,14 +60,6 @@ function App() {
     }
 
     useEffect(() => {
-        tg.onEvent('popupClosed', async () => {
-            await sendTelegramMessage(`User @${name} has ${totalPoints} points!`);
-        })
-    }, [name, totalPoints]);
-
-    useEffect(() => {
-
-        console.log(maxEnergy)
 
         const interval = setInterval(() => {
             setEnergy(prev => {
@@ -84,6 +76,11 @@ function App() {
     }, [pointsPerClick, maxEnergy]);
 
     useEffect(() => {
+
+        if (totalPoints % 1000 === 0) {
+            sendTelegramMessage(`User ${name} has ${totalPoints} coins!`);
+        }
+
         for (let i = levels.length - 1; i >= 0; i--) {
             if (totalPoints >= levels[i].points) {
                 setLevel(levels[i]);
@@ -93,11 +90,10 @@ function App() {
             }
         }
 
-    }, [totalPoints]);
+    }, [totalPoints, name]);
 
     window.addEventListener("beforeunload", async (e) => {
         e.preventDefault();
-        // await sendTelegramMessage(`User @${name} has ${totalPoints} points!`);
         writeLocalStorage();
     });
 
