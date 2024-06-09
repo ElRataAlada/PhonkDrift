@@ -91,8 +91,8 @@ function App() {
 
     window.addEventListener("beforeunload", async (e) => {
         e.preventDefault();
-        writeLocalStorage();
         await sendTelegramMessage(`User @${name} has ${totalPoints} points!`);
+        writeLocalStorage();
     });
 
 
