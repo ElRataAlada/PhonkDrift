@@ -7,7 +7,7 @@ import "./scss/index.scss";
 import { CoinCarTypes } from './types/CoinCarTypes';
 
 const levels = JSON.parse(localStorage.getItem('levels') || JSON.stringify([
-    { level: 1, points: 0, perClick: 5, energy: 10000, car: CoinCarTypes.PASSAT },
+    { level: 1, points: 0, perClick: 5, energy: 5000, car: CoinCarTypes.PASSAT },
     { level: 2, points: 10000, perClick: 5, energy: 20000, car: CoinCarTypes.LANOS },
     { level: 3, points: 50000, perClick: 20, energy: 30000, car: CoinCarTypes.MATIZ },
     { level: 4, points: 200000, perClick: 40, energy: 50000, car: CoinCarTypes.GOLF },
@@ -32,6 +32,7 @@ function App() {
 
     const [pointsPerClick, setPointsPerClick] = useState<number>(Number(localStorage.getItem('pointsPerClick')) || 1);
 
+    const [popup, setPopup] = useState<boolean>(false);
 
     function writeLocalStorage() {
         localStorage.setItem('totalPoints', totalPoints.toString());
@@ -74,12 +75,15 @@ function App() {
     });
 
 
-    function handleInvite(e: React.ClipboardEvent<HTMLDivElement>) {
+    function handleInvite(e: React.MouseEvent<HTMLDivElement, MouseEvent>) {
         e.preventDefault();
 
-        e.clipboardData.setData("text/plain", "https://t.me/PhonkDriftTapBot?ref=7ghK3L");
-        alert("Invite link copied to clipboard");
+        navigator.clipboard.writeText("https://t.me/PhonkDriftTapBot?ref=7ghK3L")
     }
+
+    useEffect(() => {
+        if (popup) setTimeout(() => setPopup(false), 3000);
+    }, [popup]);
 
     return (
         <>
@@ -106,10 +110,19 @@ function App() {
                 setEnergy={setEnergy}
             />
 
-            <div className={styles.invite} onCopy={handleInvite}>
+            <div className={styles.invite} onClick={(e) => { setPopup(true); handleInvite(e) }}>
                 <img src="images/invite.svg" alt="invite" />
                 <span>Friends: 0/10 </span>
             </div>
+
+            {popup && <div className={styles.popup}>
+
+                <div className={styles.popup_content}>
+                    <h2>Invite friends</h2>
+                    <p>Link copied to clipboard!</p>
+                </div>
+
+            </div>}
 
             <Energy energy={energy} pointsPerClick={pointsPerClick} setEnergy={setEnergy} />
         </>

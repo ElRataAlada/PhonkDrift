@@ -7,6 +7,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    user-select: none;
 
     img {
         filter: brightness(0) invert(1);
@@ -18,6 +19,7 @@
     height: 40px;
 
     padding: 0 20px;
+    user-select: none;
 
     display: flex;
     justify-content: space-between;
@@ -30,6 +32,7 @@
     align-items: center;
 
     position: absolute;
+    user-select: none;
 
     top: 40%;
     left: 50%;
@@ -48,6 +51,7 @@ progress {
     top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
+    user-select: none;
 
     appearance: none;
 
@@ -72,6 +76,9 @@ progress {
 
     gap: 5px;
     width: fit-content;
+    user-select: none;
+
+    cursor: pointer !important;
 
     height: 40px;
 
@@ -89,5 +96,35 @@ progress {
     img {
         filter: brightness(0) invert(1);
         height: 25px;
+    }
+}
+
+
+.popup {
+    position: absolute;
+
+    bottom: 80px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    border-radius: 20px;
+    background-color: black;
+    opacity: 1;
+
+    padding: 15px 30px;
+
+    width: 80%;
+
+    animation: fadeIn 3s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
     }
 }

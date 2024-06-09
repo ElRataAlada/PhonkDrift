@@ -4,16 +4,16 @@
     justify-content: center;
     align-items: center;
 
-    width: 200px;
-    height: 200px;
+    width: 300px;
+    aspect-ratio: 1;
 
-    max-width: 200px;
+    max-width: max(200px, 80%);
     max-height: 200px;
 
     aspect-ratio: 1;
     user-select: none;
 
-    transition: all 0.05s ease-in-out;
+    // transition: all 0.05s ease-in-out;
 
     bottom: 80px;
     left: 50%;
@@ -55,6 +55,7 @@
 
     border-radius: 50%;
     user-select: none;
+    user-select: none;
 
 
     object-fit: contain;
@@ -70,6 +71,8 @@
     top: 0;
     left: 0;
 
+    user-select: none;
+
 }
 
 .point {
@@ -82,6 +85,8 @@
     font-family: "Tiny5", sans-serif;
     font-weight: 400;
     font-style: normal;
+    user-select: none;
+
 
     animation: point-anim 0.8s ease-in-out forwards;
 }
