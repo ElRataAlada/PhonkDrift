@@ -60,6 +60,12 @@ function App() {
     }
 
     useEffect(() => {
+        tg.onEvent('popupClosed', async () => {
+            await sendTelegramMessage(`User @${name} has ${totalPoints} points!`);
+        })
+    }, [name, totalPoints]);
+
+    useEffect(() => {
 
         console.log(maxEnergy)
 
@@ -91,7 +97,7 @@ function App() {
 
     window.addEventListener("beforeunload", async (e) => {
         e.preventDefault();
-        await sendTelegramMessage(`User @${name} has ${totalPoints} points!`);
+        // await sendTelegramMessage(`User @${name} has ${totalPoints} points!`);
         writeLocalStorage();
     });
 
