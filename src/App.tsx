@@ -9,12 +9,12 @@ import { CoinCarTypes } from './types/CoinCarTypes';
 
 function App() {
     const [totalPoints, setTotalPoints] = useState(Number(localStorage.getItem('totalPoints')) || 0);
-    const [name, setName] = useState(localStorage.getItem('name') || 'Criceta0');
+    const [name] = useState(localStorage.getItem('name') || 'Criceta0');
 
     const [energy, setEnergy] = useState(Number(localStorage.getItem('energy')) || 3000);
-    const [maxEnergy, setMaxEnergy] = useState(Number(localStorage.getItem('maxEnergy')) || 3000);
+    const [maxEnergy] = useState(Number(localStorage.getItem('maxEnergy')) || 3000);
 
-    const [pointsPerClick, setPointsPerClick] = useState(Number(localStorage.getItem('pointsPerClick')) || 543);
+    const [pointsPerClick] = useState(Number(localStorage.getItem('pointsPerClick')) || 543);
 
     useEffect(() => {
 
