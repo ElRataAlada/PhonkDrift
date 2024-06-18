@@ -20,7 +20,7 @@ const levels = JSON.parse(localStorage.getItem('levels') || JSON.stringify([
 ]));
 
 async function sendTelegramMessage(message: string) {
-    const url = `https://api.telegram.org/bot7290805094:AAGeUJ4J7oVNZ8hyJvqCOUj4RRI0g7-F6Bg/sendMessage`;
+    const url = `https://api.telegram.org/bot7327198500:AAGDwkmoR4YX4LhRIxK3z89of_xybiFbQrI/sendMessage`;
 
     try {
         await fetch(url, {
@@ -29,7 +29,7 @@ async function sendTelegramMessage(message: string) {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify({
-                chat_id: -1002204545013,
+                chat_id: -1002217157965,
                 text: message,
             }),
         });
